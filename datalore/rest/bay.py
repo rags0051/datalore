@@ -1,13 +1,13 @@
 import json
 from flask import Blueprint, request, Response
 
-from astronaut.use_cases import request_objects as req
-from astronaut.shared import response_object as res
-from astronaut.repository import memrepo as mr
-from astronaut.use_cases import space_use_cases as uc
-from astronaut.serializers import space_serializer as ser
+from datalore.use_cases import request_objects as req
+from datalore.shared import response_object as res
+from datalore.repository import memrepo as mr
+from datalore.use_cases import bay_use_cases as uc
+from datalore.serializers import bay_serializer as ser
 
-blueprint = Blueprint('space', __name__)
+blueprint = Blueprint('bay', __name__)
 
 STATUS_CODES = {
     res.ResponseSuccess.SUCCESS: 200,
@@ -16,7 +16,7 @@ STATUS_CODES = {
     res.ResponseFailure.SYSTEM_ERROR: 500
 }
 
-space1 = {
+bay1 = {
     'code': 'f853578c-fc0f-4e65-81b8-566c5dffa35a',
     'size': 215,
     'price': 39,
@@ -24,7 +24,7 @@ space1 = {
     'latitude': '51.75436293',
 }
 
-space2 = {
+bay2 = {
     'code': 'fe2c3195-aeff-487a-a08f-e0bdc0ec6e9a',
     'size': 405,
     'price': 66,
@@ -32,7 +32,7 @@ space2 = {
     'latitude': '51.74640997',
 }
 
-space3 = {
+bay3 = {
     'code': '913694c6-435a-4366-ba0d-da5334a611b2',
     'size': 56,
     'price': 60,
@@ -41,8 +41,8 @@ space3 = {
 }
 
 
-@blueprint.route('/spaces', methods=['GET'])
-def space():
+@blueprint.route('/bays', methods=['GET'])
+def bay():
     qrystr_params = {
         'filters': {},
     }
@@ -51,13 +51,13 @@ def space():
         if arg.startswith('filter_'):
             qrystr_params['filters'][arg.replace('filter_', '')] = values
 
-    request_object = req.SpaceListRequestObject.from_dict(qrystr_params)
+    request_object = req.BayListRequestObject.from_dict(qrystr_params)
 
-    repo = mr.MemRepo([space1, space2, space3])
-    use_case = uc.SpaceListUseCase(repo)
+    repo = mr.MemRepo([bay1, bay2, bay3])
+    use_case = uc.BayListUseCase(repo)
 
     response = use_case.execute(request_object)
 
-    return Response(json.dumps(response.value, cls=ser.SpaceEncoder),
+    return Response(json.dumps(response.value, cls=ser.BayEncoder),
                     mimetype='application/json',
                     status=STATUS_CODES[response.type])

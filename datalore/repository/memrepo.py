@@ -1,4 +1,4 @@
-from astronaut.domain import space as sr
+from datalore.domain import bay as sr
 
 
 class MemRepo:
@@ -36,4 +36,4 @@ class MemRepo:
         for key, value in filters.items():
             result = [e for e in result if self._check(e, key, value)]
 
-        return [sr.Space.from_dict(r) for r in result]
+        return [sr.Bay.from_dict(r) for r in result]

@@ -2,6 +2,6 @@
 Usage
 ========
 
-To use astronaut in a project::
+To use datalore in a project::
 
-    import astronaut
+    import datalore

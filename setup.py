@@ -26,21 +26,22 @@ test_requirements = [
 
 
 setup(
-    name='astronaut',
-    version='0.1.4',
-    description="A framework for AI to explore spaces",
+    name='datalore',
+    version='0.1.0',
+    description="Data Interface Abstraction Library",
     long_description=readme + '\n\n' + history,
     author="Bobby Larson",
     author_email='bobby@robot.studio',
-    url='https://github.com/RobotStudio/astronaut',
+    url='https://github.com/RobotStudio/datalore',
     packages=find_packages(exclude=['docs', 'tests']),
-    package_dir={'astronaut':
-                 'astronaut'},
+    package_dir={'datalore':
+                 'datalore'},
     include_package_data=True,
     install_requires=requirements,
     license="GNU General Public License v3",
     zip_safe=False,
-    keywords='astronaut',
+    keywords='database database-connection-wrapper datalore db data-interface'
+             'data-sync data-synchronization',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

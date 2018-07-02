@@ -4,9 +4,9 @@ Installation
 
 At the command line::
 
-    $ easy_install astronaut
+    $ easy_install datalore
 
 Or, if you have virtualenvwrapper installed::
 
-    $ mkvirtualenv astronaut
-    $ pip install astronaut
+    $ mkvirtualenv datalore
+    $ pip install datalore
