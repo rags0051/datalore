@@ -1,6 +1,6 @@
 from unittest import mock
 
-from astronaut.shared import \
+from datalore.shared import \
     request_object as req, \
     response_object as res, \
     use_case as uc

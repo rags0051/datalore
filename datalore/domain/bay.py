@@ -1,7 +1,7 @@
-from astronaut.shared.domain_model import DomainModel
+from datalore.shared.domain_model import DomainModel
 
 
-class Space(object):
+class Bay(object):
 
     def __init__(self, code, size, price, latitude, longitude):
         self.code = code
@@ -12,7 +12,7 @@ class Space(object):
 
     @classmethod
     def from_dict(cls, adict):
-        room = Space(
+        room = Bay(
             code=adict['code'],
             size=adict['size'],
             price=adict['price'],
@@ -23,4 +23,4 @@ class Space(object):
         return room
 
 
-DomainModel.register(Space)
+DomainModel.register(Bay)

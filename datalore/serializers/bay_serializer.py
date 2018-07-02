@@ -1,7 +1,7 @@
 import json
 
 
-class SpaceEncoder(json.JSONEncoder):
+class BayEncoder(json.JSONEncoder):
 
     def default(self, o):
         try:

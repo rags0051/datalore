@@ -1,6 +1,6 @@
 import pytest
 
-from astronaut.shared import \
+from datalore.shared import \
     response_object as res, \
     request_object as req
 

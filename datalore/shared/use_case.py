@@ -1,4 +1,4 @@
-from astronaut.shared import response_object as res
+from datalore.shared import response_object as res
 
 
 class UseCase(object):
