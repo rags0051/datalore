@@ -27,8 +27,8 @@ test_requirements = [
 
 setup(
     name='datalore',
-    version='0.1.4',
-    description="A framework for AI to explore bays",
+    version='0.1.0',
+    description="Data Interface Abstraction Library",
     long_description=readme + '\n\n' + history,
     author="Bobby Larson",
     author_email='bobby@robot.studio',
@@ -40,7 +40,8 @@ setup(
     install_requires=requirements,
     license="GNU General Public License v3",
     zip_safe=False,
-    keywords='datalore',
+    keywords='database database-connection-wrapper datalore db data-interface'
+             'data-sync data-synchronization',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

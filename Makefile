@@ -47,6 +47,7 @@ clean-test:
 
 clean-dev:
 	rm -fr .mypy_cache/
+	find . -name '*.py@neomake*.py' -exec rm -fr {} +
 
 lint:
 	flake8 datalore tests
