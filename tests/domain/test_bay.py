@@ -1,22 +1,22 @@
 import uuid
-from astronaut.domain.space import Space
+from datalore.domain.bay import Bay
 
 
-def test_space_model_init():
+def test_bay_model_init():
     code = uuid.uuid4()
-    space = Space(code, size=200, price=10,
+    bay = Bay(code, size=200, price=10,
                           longitude='-0.09998975',
                           latitude='51.75436293')
-    assert space.code == code
-    assert space.size == 200
-    assert space.price == 10
-    assert space.longitude == -0.09998975
-    assert space.latitude == 51.75436293
+    assert bay.code == code
+    assert bay.size == 200
+    assert bay.price == 10
+    assert bay.longitude == -0.09998975
+    assert bay.latitude == 51.75436293
 
 
-def test_space_model_from_dict():
+def test_bay_model_from_dict():
     code = uuid.uuid4()
-    space = Space.from_dict(
+    bay = Bay.from_dict(
         {
             'code': code,
             'size': 200,
@@ -25,8 +25,8 @@ def test_space_model_from_dict():
             'latitude': '51.75436293'
         }
     )
-    assert space.code == code
-    assert space.size == 200
-    assert space.price == 10
-    assert space.longitude == -0.09998975
-    assert space.latitude == 51.75436293
+    assert bay.code == code
+    assert bay.size == 200
+    assert bay.price == 10
+    assert bay.longitude == -0.09998975
+    assert bay.latitude == 51.75436293

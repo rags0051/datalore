@@ -2,7 +2,7 @@
 
 """Module Init"""
 
-from astronaut import *  # noqa: F403,F401
+from datalore import *  # noqa: F403,F401
 
 
 __author__ = 'Bobby'

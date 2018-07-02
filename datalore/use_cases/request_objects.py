@@ -1,9 +1,9 @@
 import collections
 
-from astronaut.shared import request_object as req
+from datalore.shared import request_object as req
 
 
-class SpaceListRequestObject(req.ValidRequestObject):
+class BayListRequestObject(req.ValidRequestObject):
 
     def __init__(self, filters=None):
         self.filters = filters
@@ -19,4 +19,4 @@ class SpaceListRequestObject(req.ValidRequestObject):
         if invalid_req.has_errors():
             return invalid_req
 
-        return SpaceListRequestObject(filters=adict.get('filters', None))
+        return BayListRequestObject(filters=adict.get('filters', None))

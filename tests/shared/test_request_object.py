@@ -1,4 +1,4 @@
-from astronaut.shared import request_object as req
+from datalore.shared import request_object as req
 
 
 def test_invalid_request_object_is_false():
